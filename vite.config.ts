@@ -1,8 +1,11 @@
+// vite.config.ts
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  root: './src',
+  plugins: [react()],     // Reactなら入れておくと安心
   build: {
-    outDir: '../dist',
+    outDir: 'dist',
+    ssr: false            // ← SSRを明示的にオフ
   }
 })
